@@ -1,0 +1,135 @@
+/* ============================================
+   我的小站 - 样式表
+   想改颜色，只改下面 :root 里的几行就够了
+   ============================================ */
+
+:root {
+  --bg:        #f7f8fa;   /* 页面背景色 */
+  --card:      #ffffff;   /* 卡片背景色 */
+  --text:      #1f2328;   /* 主要文字颜色 */
+  --text-sub:  #656d76;   /* 次要文字颜色 */
+  --brand:     #2f81f7;   /* 主题蓝：链接、按钮 */
+  --border:    #e3e6ea;   /* 分隔线颜色 */
+}
+
+/* 晚上自动变深色：手机系统开深色模式时生效 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #0d1117;
+    --card:     #161b22;
+    --text:     #e6edf3;
+    --text-sub: #8b949e;
+    --brand:    #58a6ff;
+    --border:   #30363d;
+  }
+}
+
+/* ---- 全局基础 ---- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+  /* 手机上左右留点空，不会顶到屏幕边 */
+  padding-bottom: 40px;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- 顶部导航 ---- */
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  /* 往下滚动时导航栏固定在顶部 */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.logo { font-weight: 700; font-size: 17px; color: var(--text); }
+.site-header nav { display: flex; gap: 16px; font-size: 15px; }
+
+/* ---- 自我介绍区 ---- */
+.hero {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 44px 0;
+  text-align: center;
+}
+.hero h1 { font-size: 27px; margin-bottom: 10px; line-height: 1.4; }
+.subtitle { color: var(--text-sub); font-size: 14px; margin-bottom: 18px; }
+.intro {
+  color: var(--text-sub);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+.links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--brand) !important;
+  border: 1px solid var(--border);
+}
+
+/* ---- 通用区块 ---- */
+.section { padding: 36px 0; }
+.section h2 { font-size: 20px; margin-bottom: 18px; }
+.hint {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: 18px;
+}
+
+/* ---- 文章列表 ---- */
+.post-list { list-style: none; }
+.post-list li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+.post-list .title { font-size: 16px; font-weight: 600; }
+.post-list .date { color: var(--text-sub); font-size: 13px; margin-left: 8px; }
+.post-list .desc { color: var(--text-sub); font-size: 14px; margin-top: 6px; }
+
+/* ---- 底部 ---- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+.tiny { font-size: 12px; margin-top: 4px; }
