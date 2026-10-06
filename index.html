@@ -2,33 +2,102 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <!-- 这一行很重要：让网页在手机上按屏幕宽度显示，不然手机上会缩得很小 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的第一个网站</title>
-  <style>
-    body { font-family: sans-serif; background: #f7f8fa; color: #1f2328;
-           line-height: 1.8; padding: 40px 20px; text-align: center; }
-    h1 { font-size: 26px; margin-bottom: 8px; }
-    .sub { color: #656d76; font-size: 14px; margin-bottom: 24px; }
-    .card { background: #fff; border: 1px solid #e3e6ea; border-radius: 12px;
-            padding: 20px; max-width: 480px; margin: 0 auto 16px; text-align: left; }
-    .btn { display: inline-block; background: #2f81f7; color: #fff;
-           padding: 10px 22px; border-radius: 8px; text-decoration: none; }
-  </style>
+  <meta name="description" content="这是我的个人网站">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>你好，我是小三</h1>
-  <p class="sub">高一学生 · 正在学做网站 · 这是第一个页面</p>
 
-  <div class="card">
-    <strong>关于我</strong>
-    <p>这里写自我介绍。改这段文字，刷新就能看到变化。</p>
-  </div>
+  <!-- ============ 顶部导航 ============ -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo">🌱 我的小站</a>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="posts.html">文章</a>
+        <a href="#guestbook">留言板</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="card">
-    <strong>我为什么建这个站</strong>
-    <p>记录学习笔记，顺便练练写代码。</p>
-  </div>
+  <!-- ============ 自我介绍区 ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <!-- 把下面的名字换成你自己的 -->
+      <h1>你好，我是小明</h1>
+      <p class="subtitle">高一学生 · 正在学做网站 · 喜欢写代码和打球</p>
+      <p class="intro">
+        这是我人生中第一个自己搭的网站。这里会放我的学习笔记、随手写的文章，
+        还有一个留言板，欢迎来找我聊天。
+      </p>
+      <div class="links">
+        <a class="btn" href="posts.html">看看我的文章</a>
+        <a class="btn btn-ghost" href="#guestbook">去留言板</a>
+      </div>
+    </div>
+  </section>
 
-  <a class="btn" href="#">我的文章（还没写）</a>
+  <!-- ============ 最近的文章 ============ -->
+  <section class="section">
+    <div class="wrap">
+      <h2>📝 最近写的东西</h2>
+      <ul class="post-list">
+        <li>
+          <a href="posts.html">
+            <span class="title">第一篇：我怎么把这个网站搭起来的</span>
+            <span class="date">2026-10-05</span>
+          </a>
+          <p class="desc">记录了从零开始搭站的全过程，包括踩过的坑。</p>
+        </li>
+        <li>
+          <a href="posts.html">
+            <span class="title">高一的学习记录</span>
+            <span class="date">2026-10-01</span>
+          </a>
+          <p class="desc">随便写点什么，证明这个网站是可以更新的。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 留言板 ============ -->
+  <section class="section" id="guestbook">
+    <div class="wrap">
+      <h2>💬 留言板</h2>
+      <p class="hint">
+        下面的留言功能需要先完成「启用 Giscus」这一步（教程第 5 阶段会讲）。
+        没配置之前这里会显示一段提示文字，这是正常的。
+      </p>
+
+      <!-- ↓↓↓ 留言区：把下面 data-repo 那一行换成你自己的 GitHub 仓库名 ↓↓↓ -->
+      <script src="https://giscus.app/client.js"
+        data-repo="chenmokeji/mysite"
+        data-repo-id="R_kgDOU9j9aw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOU9j9a84DHJGm"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+      <!-- ↑↑↑ 留言区结束 ↑↑↑ -->
+    </div>
+  </section>
+
+  <!-- ============ 底部 ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 我的小站 · 用 HTML + CSS 手写</p>
+      <p class="tiny">本站由一名高中生于课余时间维护 🙋</p>
+    </div>
+  </footer>
+
 </body>
 </html>
